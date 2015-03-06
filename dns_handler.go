@@ -98,7 +98,6 @@ func get_domain(name string) int64 {
 }
 
 func get_subdomain(domain_id int64, name string) (string, string) {
-	log.Println("debug:", domain_id, name)
 	var ret, ip string
 	value := url.Values{}
 	value.Add("domain_id", strconv.FormatInt(domain_id, 10))

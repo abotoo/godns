@@ -81,6 +81,8 @@ func dns_loop() {
 	}()
 
 	for {
+		//Interval is 5 minutes
+		time.Sleep(time.Second * 15)
 
 		domain_id := get_domain(Configuration.Domain)
 
