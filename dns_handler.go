@@ -179,13 +179,13 @@ func post_data(url string, content url.Values) (string, error) {
 	req.Header.Set("User-Agent", fmt.Sprintf("GoDNS/0.1 (%s)", Configuration.Email))
 
 	response, err := client.Do(req)
-	defer response.Body.Close()
 
 	if err != nil {
 		log.Println("Post failed...")
 		log.Println(err)
 		return "", err
 	}
+	defer response.Body.Close()
 
 	resp, _ := ioutil.ReadAll(response.Body)
 
